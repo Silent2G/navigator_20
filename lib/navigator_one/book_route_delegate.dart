@@ -1,3 +1,4 @@
+import 'package:book_navigation_20/home.dart';
 import 'package:book_navigation_20/model/book.dart';
 import 'package:book_navigation_20/ui/book_list_screen.dart';
 import 'package:book_navigation_20/ui/uknown_screen.dart';
@@ -37,9 +38,25 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
       pages: [
         MaterialPage(
           key: ValueKey('BooksListPage'),
-          child: BooksListScreen(
-            books: books,
-            onTapped: _handleBookTapped,
+          child: Home(
+            child1: BooksListScreen(
+              books: books,
+              onTapped: _handleBookTapped,
+            ),
+            child2: Scaffold(
+              body: Center(
+                child: const Text(
+                  "Route Screen One",
+                ),
+              ),
+            ),
+            child3: Scaffold(
+              body: Center(
+                child: const Text(
+                  "Route Screen One",
+                ),
+              ),
+            ),
           ),
         ),
         if (show404)

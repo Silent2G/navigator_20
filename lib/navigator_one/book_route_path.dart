@@ -1,6 +1,6 @@
 class BookRoutePath {
-  final int id;
-  final bool isUnknown;
+  final int? id;
+  final bool? isUnknown;
 
   BookRoutePath.home()
       : id = null,

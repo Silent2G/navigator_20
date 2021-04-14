@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../model/book.dart';
 
 class BookDetailsScreen extends StatelessWidget {
-  final Book book;
+  final Book? book;
 
   BookDetailsScreen({
     @required this.book,
@@ -19,8 +19,8 @@ class BookDetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (book != null) ...[
-              Text(book.title, style: Theme.of(context).textTheme.headline6),
-              Text(book.author, style: Theme.of(context).textTheme.subtitle1),
+              Text(book!.title, style: Theme.of(context).textTheme.headline6),
+              Text(book!.author, style: Theme.of(context).textTheme.subtitle1),
             ],
           ],
         ),

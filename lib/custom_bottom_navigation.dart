@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'custom_bottom_navigation_item.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  final Function(int) onChange;
-  final int currentIndex;
+  final Function(int)? onChange;
+  final int? currentIndex;
 
   CustomBottomNavigationBar({
     @required this.currentIndex,

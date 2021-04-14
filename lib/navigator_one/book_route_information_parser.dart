@@ -6,7 +6,7 @@ class BookRouteInformationParser extends RouteInformationParser<BookRoutePath> {
   @override
   Future<BookRoutePath> parseRouteInformation(
       RouteInformation routeInformation) async {
-    final uri = Uri.parse(routeInformation.location);
+    final uri = Uri.parse(routeInformation.location!);
     // Handle '/'
     if (uri.pathSegments.length == 0) {
       return BookRoutePath.home();
@@ -26,8 +26,8 @@ class BookRouteInformationParser extends RouteInformationParser<BookRoutePath> {
   }
 
   @override
-  RouteInformation restoreRouteInformation(BookRoutePath path) {
-    if (path.isUnknown) {
+  RouteInformation? restoreRouteInformation(BookRoutePath path) {
+    if (path.isUnknown!) {
       return RouteInformation(location: '/404');
     }
     if (path.isHomePage) {

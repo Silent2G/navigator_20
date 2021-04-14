@@ -3,7 +3,7 @@ import 'package:book_navigation_20/ui/book_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsPage extends Page {
-  final Book book;
+  final Book? book;
 
   BookDetailsPage({
     this.book,

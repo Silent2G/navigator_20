@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomBottomNavigationItem extends StatefulWidget {
-  final int index;
-  final int selectedIndex;
-  final String iconPath;
-  final String label;
-  final Function(int) onChange;
+  final int? index;
+  final int? selectedIndex;
+  final String? iconPath;
+  final String? label;
+  final Function(int)? onChange;
 
   CustomBottomNavigationItem(
       {@required this.index,
-        @required this.selectedIndex,
-        @required this.iconPath,
-        @required this.label,
-        @required this.onChange});
+      @required this.selectedIndex,
+      @required this.iconPath,
+      @required this.label,
+      @required this.onChange});
 
   @override
   State createState() {
@@ -24,7 +24,7 @@ class CustomBottomNavigationItem extends StatefulWidget {
 class CustomBottomNavigationItemState
     extends State<CustomBottomNavigationItem> {
   void _changeIndex(int index) {
-    widget.onChange(index);
+    widget.onChange!(index);
   }
 
   @override
@@ -34,7 +34,7 @@ class CustomBottomNavigationItemState
       child: InkWell(
         radius: 80,
         onTap: () {
-          _changeIndex(widget.index);
+          _changeIndex(widget.index!);
         },
         child: Container(
           child: Column(
@@ -45,7 +45,7 @@ class CustomBottomNavigationItemState
               Container(
                 padding: EdgeInsets.only(bottom: 3),
                 child: SvgPicture.asset(
-                  widget.iconPath,
+                  widget.iconPath!,
                   width: 20,
                   height: 20,
                   color: widget.selectedIndex == widget.index
@@ -60,17 +60,17 @@ class CustomBottomNavigationItemState
                 child: AnimatedDefaultTextStyle(
                   style: widget.selectedIndex == widget.index
                       ? TextStyle(
-                      fontSize: 12,
-                      fontStyle: FontStyle.normal,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700)
+                          fontSize: 12,
+                          fontStyle: FontStyle.normal,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700)
                       : TextStyle(
-                      fontSize: 12,
-                      fontStyle: FontStyle.normal,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400),
+                          fontSize: 12,
+                          fontStyle: FontStyle.normal,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400),
                   duration: const Duration(milliseconds: 50),
-                  child: Text(widget.label),
+                  child: Text(widget.label!),
                 ),
               )
             ],
